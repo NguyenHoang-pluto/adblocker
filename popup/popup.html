@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>AdBlocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <img src="../icons/icon32.png" alt="" class="logo" width="28" height="28">
+    <div class="brand">
+      <div class="name">AdBlocker</div>
+      <div class="status" id="globalStatus">Đang bảo vệ</div>
+    </div>
+    <label class="switch" title="Bật/tắt chặn quảng cáo trên mọi trang">
+      <input type="checkbox" id="globalToggle" checked>
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <main class="card" id="siteCard">
+    <div class="site">
+      <span class="host" id="host">—</span>
+      <span class="pill" id="sitePill">Đang chặn</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num" id="blockedCount">0</div>
+        <div class="label">yêu cầu bị chặn</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="hiddenCount">0</div>
+        <div class="label">phần tử bị ẩn</div>
+      </div>
+    </div>
+
+    <button class="btn" id="siteToggle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10"/></svg>
+      <span id="siteToggleText">Tắt chặn trên trang này</span>
+    </button>
+    <button class="btn btn-primary" id="pickBtn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+      <span>Chọn phần tử để ẩn</span>
+    </button>
+  </main>
+
+  <div class="notice" id="notice" hidden>
+    <p id="noticeText"></p>
+    <button class="btn" id="reloadBtn" hidden>Tải lại trang</button>
+  </div>
+
+  <footer class="footer">
+    <button class="link" id="optionsBtn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Cài đặt
+    </button>
+    <span class="version" id="version"></span>
+  </footer>
+
+  <script src="../shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

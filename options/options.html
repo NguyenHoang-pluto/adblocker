@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cài đặt AdBlocker</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <img src="../icons/icon48.png" alt="" width="40" height="40">
+      <div>
+        <h1>AdBlocker</h1>
+        <p class="sub" id="summary">Chặn quảng cáo &amp; trình theo dõi</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Chung</h2>
+      <label class="row">
+        <div>
+          <div class="row-title">Chặn quảng cáo</div>
+          <div class="row-desc">Tắt mục này để tạm dừng AdBlocker trên mọi trang.</div>
+        </div>
+        <span class="switch"><input type="checkbox" id="enabled"><span class="slider"></span></span>
+      </label>
+      <label class="row">
+        <div>
+          <div class="row-title">Chặn trình theo dõi</div>
+          <div class="row-desc">Chặn Google Analytics, Hotjar, Clarity, pixel quảng cáo… Tắt nếu trang nào đó bị lỗi.</div>
+        </div>
+        <span class="switch"><input type="checkbox" id="blockTrackers"><span class="slider"></span></span>
+      </label>
+    </section>
+
+    <section class="section">
+      <h2>Trang được cho phép</h2>
+      <p class="desc">AdBlocker sẽ không chặn gì trên các trang này (và tên miền con). Mỗi dòng một tên miền.</p>
+      <textarea id="whitelist" rows="6" spellcheck="false" placeholder="vd: vnexpress.net"></textarea>
+      <div class="actions">
+        <button class="btn btn-primary" data-save="whitelist">Lưu</button>
+        <span class="saved" data-saved-for="whitelist"></span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tên miền chặn thêm</h2>
+      <p class="desc">Chặn mọi yêu cầu tới các tên miền này (ảnh, script, iframe…). Mỗi dòng một tên miền.</p>
+      <textarea id="blockedDomains" rows="6" spellcheck="false" placeholder="vd: ads.example.com"></textarea>
+      <div class="actions">
+        <button class="btn btn-primary" data-save="blockedDomains">Lưu</button>
+        <span class="saved" data-saved-for="blockedDomains"></span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Bộ lọc ẩn phần tử</h2>
+      <p class="desc">
+        Các phần tử bạn chọn bằng “Chọn phần tử để ẩn” sẽ được lưu ở đây. Mỗi dòng một bộ lọc:
+      </p>
+      <ul class="syntax">
+        <li><code>example.com##.banner</code> — ẩn <code>.banner</code> trên example.com</li>
+        <li><code>a.com,b.com##div.popup</code> — áp dụng cho nhiều trang</li>
+        <li><code>##.quang-cao-noi</code> — áp dụng cho mọi trang</li>
+        <li><code>! ghi chú</code> — dòng chú thích</li>
+      </ul>
+      <textarea id="customFilters" rows="10" spellcheck="false" class="mono"></textarea>
+      <div class="actions">
+        <button class="btn btn-primary" data-save="customFilters">Lưu</button>
+        <span class="saved" data-saved-for="customFilters"></span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Sao lưu</h2>
+      <p class="desc">Xuất toàn bộ cài đặt ra tệp JSON hoặc khôi phục từ tệp đã xuất.</p>
+      <div class="actions">
+        <button class="btn" id="exportBtn">Xuất cài đặt</button>
+        <button class="btn" id="importBtn">Nhập cài đặt</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <span class="saved" id="backupStatus"></span>
+      </div>
+    </section>
+  </div>
+
+  <script src="../shared/settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

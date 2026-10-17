@@ -1,0 +1,8 @@
+Thumbs.db
+desktop.ini
+.DS_Store
+*.zip
+*.crx
+*.pem
+# Edge/Chrome tự sinh khi nạp extension
+_metadata/

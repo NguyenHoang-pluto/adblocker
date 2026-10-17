@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "google-analytics.com",
+        "analytics.google.com",
+        "hotjar.com",
+        "hotjar.io",
+        "clarity.ms",
+        "mouseflow.com",
+        "fullstory.com",
+        "crazyegg.com",
+        "luckyorange.com",
+        "luckyorange.net",
+        "inspectlet.com",
+        "mixpanel.com",
+        "api.segment.io",
+        "scorecardresearch.com",
+        "quantserve.com",
+        "quantcount.com",
+        "chartbeat.com",
+        "chartbeat.net",
+        "nr-data.net",
+        "statcounter.com",
+        "histats.com",
+        "mc.yandex.ru",
+        "bat.bing.com",
+        "ads-twitter.com",
+        "analytics.twitter.com",
+        "px.ads.linkedin.com",
+        "analytics.tiktok.com",
+        "demdex.net",
+        "2o7.net",
+        "omtrdc.net",
+        "krxd.net",
+        "bluekai.com",
+        "exelator.com",
+        "rlcdn.com",
+        "agkn.com",
+        "everesttech.net",
+        "tapad.com",
+        "adsymptotic.com",
+        "crwdcntrl.net"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||facebook.com/tr^",
+      "domainType": "thirdParty",
+      "resourceTypes": ["image", "xmlhttprequest", "ping", "script", "sub_frame", "other"]
+    }
+  }
+]

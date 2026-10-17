@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "AdBlocker – Chặn quảng cáo",
+  "short_name": "AdBlocker",
+  "version": "1.0.0",
+  "description": "Chặn quảng cáo, trình theo dõi và ẩn phần tử quảng cáo trên mọi trang web. Nhẹ, không thu thập dữ liệu.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "AdBlocker",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "contextMenus",
+    "activeTab"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "ads", "enabled": true, "path": "rules/ads.json" },
+      { "id": "trackers", "enabled": true, "path": "rules/trackers.json" }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "shared/settings.js",
+        "content/filters.js",
+        "content/picker.js",
+        "content/content.js",
+        "content/youtube.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ]
+}
